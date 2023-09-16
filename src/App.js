@@ -12,6 +12,7 @@ export default function App() {
   const intervalRef = useRef(null);
 
   function startTimer() {
+    setTitle(`You're doing great!`);
     intervalRef.current = setInterval(() => {
       setTimeLeft((timeLeft) => {
         if (timeLeft >= 1) return timeLeft - 1;
@@ -22,10 +23,12 @@ export default function App() {
 
   function stopTimer() {
     clearInterval(intervalRef.current);
+    setTitle('Keep it up!');
   }
 
   function resetTimer() {
     clearInterval(intervalRef.current);
+    setTitle('Ready to go another round?');
     setTimeLeft(25 * 60);
   }
 
