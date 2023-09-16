@@ -16,6 +16,7 @@ export default function App() {
     intervalRef.current = setInterval(() => {
       setTimeLeft((timeLeft) => {
         if (timeLeft >= 1) return timeLeft - 1;
+        resetTimer();
         return 0;
       });
     }, 1000);
